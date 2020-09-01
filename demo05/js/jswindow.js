@@ -42,24 +42,6 @@ var state04 = {
 
 
 
-
-
-$("#selectFiles").change(function(e) {
-    onChange(e);
-});
-
-
-
-
-
-
-
-function onChange(event) {
-    var reader = new FileReader();
-    reader.onload = onReaderLoad;
-    reader.readAsText(event.target.files[0]);  
-}
-
 function showButton()
     {
     document.getElementById ("button2").style .visibility ="visible";
@@ -77,31 +59,15 @@ function closeWindow05() {
 
 
 
-function onReaderLoad(event){
-    //alert(event.target.result);
-    var title = [];
-    var result = JSON.parse(event.target.result);
-    // var title = JSON.parse(event.target.result.title);
-    // var formatted = JSON.stringify(result, null, null);
-    // var w3school = result.filter(function (entry) {
-    // return entry.title === 'w3schools';
-    // });
- for(i =0; i<result.length;i++){
-     title += [result[i].header, result[i].title];
-     }
-    var formatted = JSON.stringify(title,null,0);
-    // console.log(formatted);
 
-//load JSON
-  // var a = w3school
 
-    
-   var list = document.getElementsByClassName("table")[0];
-   list.getElementsByClassName('quantity')[0].innerHTML = (formatted.match(/w3school/gi)).length;
+
+   // document.getElementById('02').innerHTML = youtube;
+   // list.getElementsByClassName('quantity')[0].innerHTML = ar;
+
+
    // list.getElementsByClassName('quantity')[1].innerHTML = (formatted.match(/youtube/gi)).length;
-
    // document.getElementBy('02').innerHTML = (formatted.match(/w3school/gi)).length;
-
 
     // document.getElementById('02').innerHTML =(formatted.match(/software/gi)).length;
 
@@ -110,7 +76,6 @@ function onReaderLoad(event){
 
     //------------------------------ trash
     // document.getElementById('result').value = formatted;
-}
 
 
 //--------------------------------------------------------- part2 ---------------------------------------------------------------------------------
@@ -144,7 +109,7 @@ function clampX(n) {
 }
 
 function clampY(n) {
-    return Math.min(Math.max(n, 0),  window.innerHeight-50);
+    return Math.min(Math.max(n, 0),  window.innerHeight+300);
 }
 
 
