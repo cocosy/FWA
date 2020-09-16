@@ -1,0 +1,143 @@
+html {
+  overflow: hidden;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+
+
+body {
+  margin:0;
+  padding:0;
+  text-align:center;
+  height: 100%;
+/*  overflow-y: scroll;*/
+/*  overflow-x: hidden;
+*/}
+
+
+
+ul{
+  margin: 0;
+}
+
+
+a{
+  color: black;
+  font-size: 18px;
+}
+
+
+section{
+ height: 800px;
+ margin: 0;
+ padding: 0;
+ position: relative; 
+ width:100%;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+#section1 {
+  box-sizing: border-box;
+/*  color: black;*/
+  /*min-height: 40vw;*/
+  padding-top: 200px;
+  position: relative;
+  -webkit-transform-style: inherit;
+    font-size: 230%;
+/*  transform-style: inherit;*/
+}
+
+
+#typed-strings{
+  text-align: center;
+  color: black;
+}
+
+
+
+
+
+/*-------------- nav bar --------------*/
+
+/*
+.topnav a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: white;
+  color: black;
+}
+
+.topnav a.active {
+  color: blue;
+}
+*/
+/*-------------- nav bar --------------*/
+
+/*
+ touch-action: none; 
+ transform: translate3d(0px, -2334px, 0px); 
+ transition: all 1000ms ease 0s;*/
+
+/*#information{
+  background-color:lightblue;
+}
+
+
+
+.instruct{
+  background-color:lightgrey;
+  text-align: justify;
+  display: none;
+  width: 100%;
+  padding: 25px;
+  color: white;
+  font-size: 25px;
+  box-sizing: border-box;
+}
+
+
+/*#info{
+   background-color:black;
+}*/
+
+
+
+
+
+/*#section1 {
+  background-color: pink;
+}
+
+#section2 {
+  height: 100vh;
+  background-color: yellow;
+}*/
+
+
+
+
+
+

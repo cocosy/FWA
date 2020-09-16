@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
+
+
+#window {
+
+    width: 400px;
+    height: 150px;
+}
+
+
+#instruction {
+    width: 400px;
+    height: 480px;
+    text-align: left;
+}
+
+
+#information {
+    width: 400px;
+    height: 520px;
+}
+
+#resource{
+
+    width: 400px;
+    height: 300px;
+
+
+}
+
+#invoice{
+      padding-bottom: 120px;
+      left: 40vw;
+
+}
+
+*{
+      font-family: 'IBM Plex Sans', sans-serif;
+
+}
+
+.window{
+    overflow: auto;
+    z-index: 2;
+  /*  border: 1px solid black;*/
+    background-color: white;
+    position: absolute;
+    user-select: none;
+    text-justify: auto;
+    word-spacing: normal;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+section{
+    overflow: scroll;
+}
+
+
+.window .window-bar {
+    padding-left: 9px;
+    padding-top: 3px;
+    cursor: move;
+    background-color: #c7c7c7;
+    color: white;
+    text-align: left;
+}
+
+.window .window-bar .window-close {
+    cursor: pointer;
+/*    display: inline-block;*/
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    background-color: white;
+    width: 15px;
+    height: 15px;
+    padding-left: 2px;
+    padding-top: 2px;
+}
+
+.window-body {
+    margin: 1em 2em;
+    text-align: left;
+    
+}
+
+button{
+  background-color: white; /* Green */
+  border: none;
+  color: black;
+  padding: 30px 10px;
+  text-decoration: underline;
+  text-align: center;
+  display: inline-block;
+  font-size: 18px;
+  
+}
