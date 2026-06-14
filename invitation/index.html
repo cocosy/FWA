@@ -586,11 +586,14 @@ body.final-black #step2{
     const d = state.date;
 
     try {
+      const responseValue = state.surprise ? "sg" : d.toLocaleDateString();
+
       await emailjs.send(
         "service_dko74hs",
         "template_1q5vgeh",
         {
-          date: state.surprise ? "sg" : d.toLocaleDateString()
+          date: responseValue,
+          response: responseValue
         }
       );
     } catch (e) {
