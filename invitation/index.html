@@ -379,6 +379,14 @@ body.final-black #step2{
   color:#fff !important;
 }
 
+
+.final-date{
+  font-family:"Fraunces", Georgia, serif !important;
+  font-size:1.8rem !important;
+  font-style:italic;
+  color:#fff !important;
+}
+
 </style>
 </head>
 <body>
@@ -582,7 +590,7 @@ body.final-black #step2{
         "service_dko74hs",
         "template_1q5vgeh",
         {
-          date: d.toLocaleDateString()
+          date: state.surprise ? "sg" : d.toLocaleDateString()
         }
       );
     } catch (e) {
@@ -599,7 +607,7 @@ body.final-black #step2{
     document.getElementById("step2").innerHTML = `
       <div class="final-card">
         <h1><em>see you</em></h1>
-        <p class="final-result">${state.surprise ? "AT SG ✈︎" : dateStr}</p>
+        <p class="${state.surprise ? 'final-result' : 'final-date'}">${state.surprise ? "AT SG ✈︎" : dateStr}</p>
       </div>
     `;
     document.body.classList.add("final-black");
