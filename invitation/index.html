@@ -387,13 +387,22 @@ body.final-black #step2{
   color:#fff !important;
 }
 
+
+.launch-gif{width:270px;margin:0 auto 28px;}
+.launch-gif img{width:100%;display:block;border-radius:4px;}
+
 </style>
 </head>
 <body>
   <div class="sheet">
     <!-- STEP 1 -->
     <div class="step active" id="step1">
-      <pre class="ascii">◡̈</pre>
+
+<div class="launch-gif">
+  <img src="launch-dragon-ball.gif" alt="Launch" />
+</div>
+
+      
       <h1 id="ask-title"><em>date</em>?</h1>
       
       <div class="btn-row" id="btn-row">
@@ -554,7 +563,7 @@ body.final-black #step2{
   }
   timePicker.addEventListener("change", () => {
     state.hour = parseInt(timePicker.value, 10);
-    state.timeTouched = true;   // they chose a time, so don't override it per-plan
+    state.timeTouched = true;
   });
 
   function selectDay(d, chip) {
@@ -585,32 +594,44 @@ body.final-black #step2{
   dayNext.addEventListener("click", async () => {
     const d = state.date;
 
-    try {
-      const responseValue = state.surprise ? "sg" : d.toLocaleDateString();
+    const selectedDate = state.surprise
+      ? "sg"
+      : d.toLocaleDateString(undefined, {
+          weekday: "long",
+          year: "numeric",
+          month: "long",
+          day: "numeric"
+        });
 
+    const selectedTime = state.surprise
+      ? "sg"
+      : timePicker.options[timePicker.selectedIndex].textContent;
+
+    const responseValue = state.surprise
+      ? "sg"
+      : `${selectedDate} · ${selectedTime}`;
+
+    try {
       await emailjs.send(
         "service_dko74hs",
         "template_1q5vgeh",
         {
-          date: responseValue,
-          response: responseValue
+          date: selectedDate,
+          time: selectedTime,
+          response: responseValue,
+          selected_date: selectedDate,
+          selected_time: selectedTime,
+          message: responseValue
         }
       );
     } catch (e) {
       console.error("EmailJS error", e);
     }
 
-
-    const dateStr = d.toLocaleDateString(undefined, {
-      weekday: "long",
-      month: "long",
-      day: "numeric"
-    });
-
     document.getElementById("step2").innerHTML = `
       <div class="final-card">
         <h1><em>see you</em></h1>
-        <p class="${state.surprise ? 'final-result' : 'final-date'}">${state.surprise ? "AT SG ✈︎" : dateStr}</p>
+        <p class="${state.surprise ? 'final-result' : 'final-date'}">${state.surprise ? "AT SG ✈︎" : responseValue}</p>
       </div>
     `;
     document.body.classList.add("final-black");
@@ -748,6 +769,7 @@ body.final-black #step2{
 <script>
 emailjs.init("sgChlR8GO9uV9ErBV");
 </script>
+
 
 </body>
 </html>
