@@ -746,14 +746,14 @@ body.final-black #step2{
 
   function burstConfetti() {
     const colors = ["#b2432c", "#20201d", "#8d8576"];
-    const glyphs = ["*", "+", ".", "'", "o", "x", "~", "<3"];
+    const glyphs = ["☺︎"];
     for (let i = 0; i < 80; i++) {
       const c = document.createElement("div");
       c.className = "confetti";
       c.textContent = glyphs[Math.floor(Math.random() * glyphs.length)];
       c.style.left = Math.random() * 100 + "vw";
       c.style.color = colors[Math.floor(Math.random() * colors.length)];
-      c.style.animationDuration = 2 + Math.random() * 2 + "s";
+      c.style.animationDuration = 3 + Math.random() * 2 + "s";
       c.style.fontSize = 0.7 + Math.random() * 0.7 + "rem";
       document.body.appendChild(c);
       setTimeout(() => c.remove(), 4200);
